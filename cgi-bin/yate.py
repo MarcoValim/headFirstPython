@@ -11,9 +11,9 @@ def include_header(the_title):
     header = Template(head_text)
     return(header.substitute(title=the_title))
 
-"""Semelhante à função "include_header" esta usa a sua única string como semente para criar o final de uma página HTML. A página em si é armazenada em um arquivo separado em "templates/footer.html" e o argumento é usado para criar dinamicamente um conjunto de tags de linh HTML. Com base em como são usadas, parece que o argumento precisa ser um dicionpario."""
+"""Semelhante à função "include_header" esta usa a sua única string como semente para criar o final de uma página HTML. A página em si é armazenada em um arquivo separado em "templates/footer.html" e o argumento é usado para criar dinamicamente um conjunto de tags de linh HTML. Com base em como são usadas, parece que o argumento precisa ser um dicionário."""
 def include_footer(the_links):
-    with open('template/header.html') as footf:
+    with open('template/footer.html') as footf:
         foot_text = footf.read()
     link_string = '' 
     for key in the_links:
@@ -31,7 +31,7 @@ def end_form(submit_msg="Submit"):
 
 """Dado um nome e um valor de botão de opção, crie um botão de opção em HTML (tipicamente incluído em formulários HTML). Observação: ambos os argumentos são necessários."""
 def radio_button(rb_name, rb_value):
-    return('<input type = "radio" name="' + rb_name + '"value"' + rb_value + '"> ' + rb_value + '<br />')
+    return('<input type = "radio" name="' + rb_name + '" value="' + rb_value + '"> ' + rb_value + '<br />')
 
 """Dada uma lista de itens, esta função transforma a lista em uma lista não numerada HTML. Um simples loop "for" faz todo o trabalho, adicionando LI ao elemento UL em cada iteração."""
 def u_list(items):
